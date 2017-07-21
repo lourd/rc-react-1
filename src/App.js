@@ -24,14 +24,22 @@ class App extends Component {
     // event.target.value is a string, we need to make it a number
     // console.log(typeof event.target.value)
     // see more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
-    let num = parseInt(event.target.value, 10)
-    this.setState({ diff: num })
-  }
+    let num = parseInt(event.target.value, 10);
+    this.setState({ diff: num });
+  };
 
   render() {
+    let evenOrOddClass = this.state.count % 2 ? 'even' : 'odd';
+    // longer version
+    // let evenOrOddClass
+    // if (this.state.count % 2 === 0) {
+    //   evenOrOddClass = 'even'
+    // } else {
+    //   evenOrOddClass = 'odd'
+    // }
     return (
       <div>
-        <h1>{this.state.count}</h1>
+        <h1 className={evenOrOddClass}>{this.state.count}</h1>
         <button onClick={this.onUpClick}>Up</button>
         <button onClick={this.onDownClick}>Down</button>
         <input type="number" onChange={this.onInputChange} value={this.state.diff}/>

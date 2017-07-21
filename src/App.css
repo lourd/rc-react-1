@@ -8,3 +8,11 @@ body {
 h1 {
   font-size: 80px;
 }
+
+.even {
+  color: orange;
+}
+
+.odd {
+  color: purple;
+}
